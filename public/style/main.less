@@ -1,0 +1,96 @@
+@import "elements.less";
+
+@color1: rgb(30,	32,		36); 
+@color2: rgb(38,	41,		50); 
+@color3: rgb(239,	74,		74); 
+@color4: rgb(236,	236,	236); 
+@color5: rgb(255,	255,	255); 
+
+.defaultGradient(){
+	.gradient(@color1, @color1 , @color1 * 1.85);
+}
+
+.defaultFont(){
+
+	font-family: Helvetica, Arial, FreeSans, Verdana, Tahoma, 'Lucida Sans', 'Lucida Sans Unicode', 'Luxi Sans', sans-serif;
+}
+
+
+*{
+	margin: 0;
+	padding: 0;
+}
+
+html, body {
+	height:100%;
+	width: 100%;
+} 
+
+#header {
+
+	height: 55px;
+	.defaultGradient
+
+}
+
+#wrapper {
+	height: 100%;
+}
+
+#leftSide {
+
+	height: 100%;
+	width: 224px;
+	background: @color4;
+	float: left;
+	.inner-shadow()
+}
+
+
+#content {
+	height: 100%;
+	width: 100%;
+	background: @color1;
+	margin-left: 224px;
+
+}
+
+.codeHeader{
+	height: 40px;
+	background-color: @color2;
+	.inner-shadow();
+
+	label {
+
+		.defaultFont;
+		color: @color4;
+		margin: 0px 0px 0px 10px;
+
+		input, select {
+
+			margin: 7px 0px 0px 10px;
+			height: 26px;
+			background: inherit;
+			border: 0px solid @color4;
+			border-bottom-width: 1px;
+			outline-width: none;
+			padding: 1px 0px 1px 5px;
+			font-size: 14px;
+			color: @color4 * .45;
+			width: 200px;
+			.glow(@color4);
+
+			&:focus {
+				background: @color1;				 
+				border: 0px;
+				color: @color5;
+			}
+		}
+	}
+}
+
+#editor {
+	height: 100%;
+	width: 100%;
+
+}

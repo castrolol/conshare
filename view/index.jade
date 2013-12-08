@@ -1,0 +1,38 @@
+!!! 5
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible', content='IE=edge,chrome=1')
+    title Editor
+    link(href="style/main.css", rel="stylesheet")
+    style(type='text/css', media='screen').
+      body {
+        overflow: hidden;
+      }
+    
+  body
+    div#header      
+    div#wrapper
+      div#leftSide      
+      div#content
+        div.codeHeader
+          label 
+            |Titulo
+            input(type=text)
+          label
+            |Linguagem
+            select
+              option(value=1) JavaScript                
+        pre#editor.
+          function foo(items) {
+              var i;
+              for (i = 0; i < items.length; i++) {
+                  alert("Ace Rocks " + items[i]);
+              }
+          }      
+
+    script(src='js/src-noconflict/ace.js', type='text/javascript', charset='utf-8')
+    script.
+      var editor = ace.edit("editor");
+      editor.setTheme("ace/theme/twilight");
+      editor.getSession().setMode("ace/mode/javascript");
